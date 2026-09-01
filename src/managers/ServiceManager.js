@@ -1,6 +1,8 @@
 import crypto from "crypto";
 
 class ServiceManager {
+
+    static services = []
     constructor() {
         this.services = [];
     }
@@ -13,11 +15,13 @@ class ServiceManager {
         return this.services.find(service => service.id === id);
     }
 
-    createService(name, description, price, avaitable) {
+    createService(name, description, price, available) {
         const newService = {
-            id: crypto.randomUUID(), name, description, price, avaitable
+            id: crypto.randomUUID(), name, description, price, available
         };
         this.services.push(newService);
+        console.log(this.services);
+
         return newService;
     }
 
@@ -31,19 +35,11 @@ class ServiceManager {
         return service;
     }
 
-    deleteService(name) {
-        const index = this.services.findIndex(service => service.name === name);
-        if(index === -1) { return null;}
+    deleteService(id) {
+        const index = this.services.findIndex(service => service.id === id);
+        if (index === -1) { return null; }
         return this.services.splice(index, 1)[0];
     }
 }
 
 export default ServiceManager;
-/*
-const fruta = ["manzanas", "peras", "naranjas"];
-console.log(fruta[2]);*/
-/*
-const servicios = new ServiceManager();
-const ver = servicios.createService("Clinico", "Medico clinico", 35000, true);
-//const ver = servicios.getServices();
-console.log(ver);*/
