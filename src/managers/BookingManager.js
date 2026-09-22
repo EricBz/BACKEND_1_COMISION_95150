@@ -20,18 +20,24 @@ class BookingManager {
         return bookings.find(booking => booking.id === id);
     }
 
-    async createBooking(/*revisar props para poner args*/) {
+    // crea registro de turnos para un usuario
+    async createBooking() {
         const booking = await this.#readBookings();
         const newBooking = {
             id: crypto.randomUUID(),
-            // hay que ver que props podemos necesitar
+            services: [] //cada turno revservado va aca
         };
         booking.push(newBooking);
         await this.#writeBookings(booking);
         return newBooking;
     }
 
-    async
+    // pensar el booking como un registro por usuario que almacena
+    // los turnos tomados por esa persona
+    async setServiceToBooking(sid, bid) {
+        const booking = await this.getBookingsById(bid);
+        booking.services.push({ service: sid });
+    }
 }
 
 export default BookingManager;
