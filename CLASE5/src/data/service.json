@@ -1,0 +1,25 @@
+[
+  {
+    "id": "1cbc3cae-f24d-453e-a645-7e09e4f8b52a",
+    "name": "Clinico",
+    "description": "Tratamientos de dolor",
+    "price": 45000,
+    "available": true
+  },
+  {
+    "id": "240b984b-8441-4788-a0db-57b0d8a5e4a9",
+    "name": "Odontologia",
+    "description": "Tratamientos de dolor",
+    "price": 40000,
+    "available": true
+  },
+  {
+    "id": "95e8e3dc-02ce-47ff-acb4-2da36af5bd3e",
+    "name": {
+      "name": "Kinesiologia",
+      "description": "Tratamientos de dolor",
+      "price": 30000,
+      "available": true
+    }
+  }
+]
