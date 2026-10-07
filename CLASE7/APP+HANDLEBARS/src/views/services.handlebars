@@ -1,0 +1,19 @@
+<h2>Servicios disponibles</h2>
+{{#if services}}
+    <div class="services">
+        {{#each services}}
+            <article class="service-card">
+                <h3>{{name}}</h3>
+                <p>{{description}}</p>
+                <p>Precio: ${{price}}</p>
+                {{#if available}}
+                    <p>Disponible</p>
+                {{else}}
+                    <p>No disponible</p>
+                {{/if}}
+            </article>
+        {{/each}}
+    </div>
+{{else}}
+    <p>No hay servicios disponibles.</p>
+{{/if}}
