@@ -1,9 +1,11 @@
 import { Schema, model } from "mongoose";
+import paginate from "mongoose-paginate-v2";
 
 const serviceSchema = new Schema({
     name: {
         type: String,
-        required: true
+        required: true,
+        index: true
     },
     description: {
         type: String,
@@ -15,9 +17,12 @@ const serviceSchema = new Schema({
     },
     available: {
         type: Boolean,
-        default: true
+        default: true,
+        index: true
     }
 });
+
+serviceSchema.plugin(paginate);
 
 const serviceModel = model("Services", serviceSchema);
 

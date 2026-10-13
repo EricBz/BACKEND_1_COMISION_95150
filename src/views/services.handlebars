@@ -1,19 +1,26 @@
 <h2>Servicios disponibles</h2>
-{{#if services}}
-    <div class="services">
-        {{#each services}}
-            <article class="service-card">
-                <h3>{{name}}</h3>
-                <p>{{description}}</p>
-                <p>Precio: ${{price}}</p>
-                {{#if available}}
-                    <p>Disponible</p>
-                {{else}}
-                    <p>No disponible</p>
-                {{/if}}
-            </article>
-        {{/each}}
-    </div>
+{{#if services.docs}}
+<div class="services">
+    {{#each services.docs}}
+    <article class="service-card">
+        <h3>{{name}}</h3>
+        <p>{{description}}</p>
+        <p>Precio: ${{price}}</p>
+        {{#if available}}
+        <p>Disponible</p>
+        {{else}}
+        <p>No disponible</p>
+        {{/if}}
+    </article>
+    {{/each}}
+</div>
 {{else}}
-    <p>No hay servicios disponibles.</p>
+<p>No hay servicios disponibles.</p>
+{{/if}}
+
+{{#if services.hasPrevPage}}
+<p>Pagina anterior</p><a href="/services?page={{services.prevPage}}">{{services.prevPage}}</a>
+{{/if}}
+{{#if services.hasNextPage}}
+<p>Pagina siguiente</p><a href="/services?page={{services.nextPage}}">{{services.nextPage}}</a>
 {{/if}}

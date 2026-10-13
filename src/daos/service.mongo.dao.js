@@ -2,8 +2,17 @@ import serviceModel from "../models/service.model.js";
 
 class ServiceDao {
 
-    async getServices() {
-        return await serviceModel.find({}).lean();
+    async getServices(query) {
+        const services = await serviceModel.paginate(
+            {/**filtros de búsqueda*/ },
+            //opciones de paginación
+            {
+                page: query.page || 1,
+                limit: query.limit || 1,
+                lean: true
+                // sort: -1
+            })
+        return await services;
     }
 
     async getServicesById(id) {

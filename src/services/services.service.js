@@ -5,8 +5,8 @@ class ServicesService {
         this.repository = repository;
     }
 
-    async getServices() {
-        return await this.repository.getService();
+    async getServices(query) {
+        return await this.repository.getService(query);
     }
 
     async getServiceById(id) {

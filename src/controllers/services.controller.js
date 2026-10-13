@@ -5,8 +5,10 @@ const servicesService = new ServicesService();
 class ServiceController {
     static async getAll(req, res, next) {
         try {
-            const services = await servicesService.getServices();
+            const services = await servicesService.getServices(req.query);
             res.status(200).json(services);
+            console.log(services);
+
         } catch (error) {
             console.log(error);
             res.status(500).json({ error: error.message });
@@ -26,7 +28,6 @@ class ServiceController {
 
     static async create(req, res, next) {
         try {
-            //const { name, description, price, available } = req.body;
             const data = req.body;
             const newService = await servicesService.createService(data);
             res.status(201).json({ message: "servicio creado", newService });

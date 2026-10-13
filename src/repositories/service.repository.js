@@ -10,8 +10,8 @@ class ServicesRepository {
         this.dao = dao;
     }
 
-    async getService() {
-        return await this.dao.getServices();
+    async getService(query) {
+        return await this.dao.getServices(query);
     }
 
     async getServicesById(id) {

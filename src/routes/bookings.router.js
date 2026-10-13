@@ -4,7 +4,7 @@ import BookingController from "../controllers/bookings.controller.js";
 const router = Router();
 
 router.get("/:bid", BookingController.getById);
-router.post("/:bid/services/:sid", BookingController.createById);
+router.post("/:bid/services/:sid", BookingController.addServiceToBookingById);
 
 router.use(json(), urlencoded({ extended: true }));
 
