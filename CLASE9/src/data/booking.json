@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "services": [
+            {
+                "id": "1cbc3cae-f24d-453e-a645-7e09e4f8b52a"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "services": [
+            {
+                "id": "1cbc3cae-f24d-453e-a645-7e09e4f8b52a"
+            }
+        ]
+    }
+]
